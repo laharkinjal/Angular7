@@ -1,0 +1,42 @@
+<h1>
+  My Posts
+</h1>
+<div>
+  <table style="width:100%">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let post of posts">
+      <td> {{ post.id }} </td>
+      <td> {{ post.title }} </td>
+      <td> {{ post.description }} </td>
+      <td> <input type="submit" value="Edit" (click)="getPostById(post.id)"> </td>
+
+    </tr>
+  </table>
+
+
+  <form (ngSubmit)="addPost()" #PostForm="ngForm">
+
+    <table>
+      <tr>
+        <td>id:</td>
+        <td> <input type="text" name="postId" id="postId" #postId="ngModel" [(ngModel)]="model.postId" required></td>
+      </tr>
+      <tr>
+        <td>title:</td>
+        <td><input type="text" name="postTitle" id="postTitle" #postTitle="ngModel" [(ngModel)]="model.postTitle"
+            required></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><input type="text" name="postDesc" id="postDesc" #postDesc="ngModel" [(ngModel)]="model.postDesc" required></td>
+      </tr>
+    </table>
+    <input type="submit" [value]="buttonTitle">
+
+  </form>
+</div>
