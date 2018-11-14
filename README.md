@@ -1,3 +1,10 @@
+Step to Run Project
+1:- npm install
+2:- npm start
+3:- open new terminal and run json-server --watch dbnew.json
+
+
+
 # SimpleCrudApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
